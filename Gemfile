@@ -39,8 +39,7 @@ gem 'devise'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # For styling
-gem 'bootstrap-sass'
-
+gem 'bootstrap'
 gem 'jquery-rails'
 
 group :development, :test do
