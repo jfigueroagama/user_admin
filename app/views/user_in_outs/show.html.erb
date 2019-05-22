@@ -1,17 +1,17 @@
 
 <p>
   <strong>User in:</strong>
-  <%= @user_in_out.user_in %>
+  <%= @user_in_out.user_in.strftime("%F at %I:%M%p") %>
 </p>
 
 <p>
   <strong>User out:</strong>
-  <%= @user_in_out.user_out %>
+  <%= @user_in_out.user_out.strftime("%F at %I:%M%p") %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @user_in_out.user.email.split('@')[0].capitalize %>
+  <%= @user_in_out.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_user_in_out_path(@user_in_out) %> |

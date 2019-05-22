@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_05_21_195140) do
   enable_extension "plpgsql"
 
   create_table "user_in_outs", force: :cascade do |t|
-    t.time "user_in"
-    t.time "user_out"
+    t.datetime "user_in"
+    t.datetime "user_out"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

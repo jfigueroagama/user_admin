@@ -27,6 +27,10 @@ module UserAdmin
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # Configuration of Time Zone
+    config.time_zone = 'Mexico City'
+    config.active_record.default_timezone = :local
+    config.active_record.time_zone_aware_attributes = false
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
