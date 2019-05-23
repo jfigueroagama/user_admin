@@ -5,7 +5,11 @@ class UserInOutsController < ApplicationController
   # GET /user_in_outs
   # GET /user_in_outs.json
   def index
-    @user_in_outs = UserInOut.all
+    if current_user.admin
+      @user_in_outs = UserInOut.all
+    else
+      @user_in_outs = UserInOut.where(user_id: current_user.id ) 
+    end
   end
 
   # GET /user_in_outs/1

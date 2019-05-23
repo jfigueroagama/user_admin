@@ -3,12 +3,15 @@
 
   <h1>Welcome to the Check in/Check out application</h1>
 
-  <% if current_user %>
+  <% if current_user && current_user.admin %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
     <%= link_to 'User In/Out', new_user_in_out_path, class:"btn btn-lg btn-primary" %>
+  <% elsif current_user && !current_user.admin %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-lg btn-primary" %>
+    <%= link_to 'My In/out', user_in_outs_path, class: "btn btn-lg btn-primary" %>
   <% else %>
     <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-lg btn-primary" %>
     <%= link_to 'Sign in', new_user_session_path, class: "btn btn-lg btn-primary" %>
   <% end %>
-  
+
 </div>
