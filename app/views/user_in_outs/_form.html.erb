@@ -11,15 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_in %>
-    <%= form.time_select :user_in, value: DateTime.now.in_time_zone.strftime("%F at %I:%M%p") %>
-  </div>
+  <table>
+    <div class="field">
+        <tr>
+          <td><%= form.label :user_in %></td>
+          <td><%= form.time_select :user_in, value: DateTime.now.in_time_zone.strftime("%F at %I:%M%p") %></td>
+        </tr>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_out %>
-    <%= form.time_select :user_out, value: DateTime.now.in_time_zone.strftime("%F at %I:%M%p") %>
-  </div>
+    <div class="field">
+        <tr>
+            <td><%= form.label :user_out %></td>
+            <td><%= form.time_select :user_out, value: DateTime.now.in_time_zone.strftime("%F at %I:%M%p") %></td>
+        </tr>
+    </div>
+  </table>
 
   <div class="actions">
     <%= form.submit %>
